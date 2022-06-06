@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Scanner;
 
-public class albumClass
+public class Album
 {
     //Instance Variables
     public static String genre;
@@ -18,16 +18,18 @@ public class albumClass
 
     //Arrays
     static int[] albumArray = {debutPoints, fearlessPoints, speakNowPoints, redPoints, birthYearPoints,
-        reputationPoints, loverPoints, folklorePoints, evermorePoints};
+            reputationPoints, loverPoints, folklorePoints, evermorePoints};
     static String[] albumNamesArray = {"Taylor Swift", "Fearless (Taylor's Version)", "Speak Now",
             "Red (Taylor's Version)", "1989", "reputation", "Lover", "folklore", "evermore"};
 
 
     //Constructors
-    public void Album(String newGenre, String newAlbumName)
+    //public Album();
+
+    public Album(String newGenre, String newAlbumName)
     {
-        genre = newGenre;
-        albumName = newAlbumName;
+        this.genre = newGenre;
+        this.albumName = newAlbumName;
     }
 
 
@@ -163,19 +165,31 @@ public class albumClass
             evermorePoints++;
         }
 
-        for(int i = 0; i < 8; i++)
+
+        int temp = 0;
+
+        for(int i = 0; i < albumArray.length; i*=1)
         {
-            if(albumArray[i] > albumArray[i + 1])
+            if(albumArray[i] >= 5)
             {
-                setAlbumName(albumNamesArray[i]);
+                for(int album : albumArray)
+                {
+                    if(albumArray[i] > albumArray[album])
+                    {
+                        temp = albumArray[album];
+                    }
+                }
             }
             else
             {
-                setAlbumName(albumNamesArray[i + 1]);
+                i++;
             }
         }
 
-        if(albumName.equals("Taylor Swift") || albumName.equals("Fearless (Taylor's Versino)"))
+        setAlbumName(albumNamesArray[temp]);
+
+
+        if(albumName.equals("Taylor Swift") || albumName.equals("Fearless (Taylor's Version)"))
         {
             setGenre("Country");
         }
