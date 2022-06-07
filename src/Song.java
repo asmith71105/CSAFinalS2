@@ -180,21 +180,14 @@ public class Song extends Album
 
         int temp = 0;
 
-        for(int i = 0; i < songArray.length; i*=1)
+        for(int i = 0; i < songArray.length; i++)
         {
-            if(songArray[i] >= 5)
+            for(int song : songArray)
             {
-                for(int song : songArray)
+                if(songArray[i] > songArray[song])
                 {
-                    if(songArray[i] > songArray[song])
-                    {
-                        temp = songArray[song];
-                    }
+                    temp = songArray[temp];
                 }
-            }
-            else
-            {
-                i++;
             }
         }
 
@@ -203,7 +196,7 @@ public class Song extends Album
 
 
     //Getters
-    public String getSongName()
+    public static String getSongName()
     {
         return songName;
     }
@@ -214,10 +207,11 @@ public class Song extends Album
         songName = newSongName;
     }
 
-
     //toString
     public String toString()
     {
+        generateAlbum();
+        generateSong();
         return "Album: " + getAlbumName() + "\n-Genre: " + getGenre() + "\n\nSong: " + getSongName();
     } //end toString
 } //end class

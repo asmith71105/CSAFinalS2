@@ -24,8 +24,6 @@ public class Album
 
 
     //Constructors
-    //public Album();
-
     public Album(String newGenre, String newAlbumName)
     {
         this.genre = newGenre;
@@ -210,7 +208,7 @@ public class Album
 
 
     //Getters
-    public String getGenre()
+    public static String getGenre()
     {
         return genre;
     }
