@@ -3,11 +3,9 @@ public class Driver
     public static void main(String[] args)
     {
         Album.generateAlbum();
-       // Album album = new Album();
+        Song song = new Song("", "mom", "d", "n", "u");
         Song.generateSong();
-       // Song song = new Song();
-        System.out.println(Album.albumName);
-        System.out.println(Album.genre);
+        System.out.println(song.toString());
     }
 
 }

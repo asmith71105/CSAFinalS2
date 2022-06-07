@@ -41,15 +41,15 @@ public class Song extends Album
 
         if(answer1.equals("A"))
         {
-            theArcherPoints++;
+            theArcherPoints++;  //3
         }
         else if(answer1.equals("B"))
         {
-            dearJohnPoints++;
+            dearJohnPoints++; //3
         }
         else if(answer1.equals("C"))
         {
-            delicatePoints++;
+            delicatePoints++; //3
         }
         else if(answer1.equals("D"))
         {
@@ -65,8 +65,7 @@ public class Song extends Album
         }
 
         System.out.println("2. Which of these singles do you prefer? \nA. Shake It Off \nB. willow \nC. Love Story" +
-                " (Taylor's Version) \nD. Me! \nE. Look What You Made Me Do \nF. We Are Never Ever Getting Back " +
-                "Together (Taylor's Version");
+                " (Taylor's Version) \nD. Me! \nE. Look What You Made Me Do");
         String answer2 = keyboard2.next();
 
         if(answer2.equals("A"))
@@ -88,10 +87,6 @@ public class Song extends Album
         else if(answer2.equals("E"))
         {
             delicatePoints++;
-        }
-        else if(answer2.equals("F"))
-        {
-            allTooWellPoints++;
         }
 
         System.out.println("3. Pick a collab \nA. exile ft. Bon Iver \nB. Everything Has Changed ft. Ed Sheeran \nC. " +
@@ -153,13 +148,35 @@ public class Song extends Album
             tolerateItPoints++;
         }
 
-        System.out.println("5. Choose a 1989 tour special guest \nA. Mick Jagger \nB. Justin Timberlake \nC. Steven " +
-                "Tyler \nD. Wiz Khalifa \nE. Mary J. Blige \nF. The Weeknd");
+        System.out.println("5. Choose a hobby \nA. Journaling \nB. Baking \nC. Exercising \nD. Reading \nE. Drawing \n"
+                + "F. Gardening");
         String answer5 = keyboard2.next();
 
-        System.out.println("6. Choose a hobby \nA. Journaling \nB. Baking \nC. Exercising \nD. Reading \nE. Drawing \n"
-                + "F. Gardening");
-        String answer6 = keyboard2.next();
+        if(answer5.equals("A"))
+        {
+            theArcherPoints++;
+        }
+        else if(answer5.equals("B"))
+        {
+            dearJohnPoints++;
+        }
+        else if(answer5.equals("C"))
+        {
+            ayhtdwsPoints++;
+        }
+        else if(answer5.equals("D"))
+        {
+            whiteHorsePoints++;
+        }
+        else if(answer5.equals("E"))
+        {
+            coldAsYouPoints++;
+        }
+        else if(answer5.equals("F"))
+        {
+            myTearsRicochetPoints++;
+            tolerateItPoints++;
+        }
 
         int temp = 0;
 
@@ -201,7 +218,6 @@ public class Song extends Album
     //toString
     public String toString()
     {
-        String results = "Album: " + getAlbumName() + "\n-Genre: " + getGenre() + "\n\nSong: " + getSongName();
-        return results;
+        return "Album: " + getAlbumName() + "\n-Genre: " + getGenre() + "\n\nSong: " + getSongName();
     } //end toString
 } //end class

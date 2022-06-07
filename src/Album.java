@@ -215,7 +215,7 @@ public class Album
         return genre;
     }
 
-    public String getAlbumName()
+    public static String getAlbumName()
     {
         return albumName;
     }
